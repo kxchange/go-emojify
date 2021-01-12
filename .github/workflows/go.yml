@@ -2,9 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master,dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ master,dev ]
 
 jobs:
 
@@ -25,7 +25,7 @@ jobs:
 
     - name: Test
       run: |
-       go mod init
+       go mod init github.com/kxchange/go-emojify
        go get
        go get -v github.com/stretchr/testify/assert
        go test -v ./...
