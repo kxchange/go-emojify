@@ -25,5 +25,7 @@ jobs:
 
     - name: Test
       run: |
-       go get 
+       go mod init
+       go get
+       go get -v github.com/stretchr/testify/assert
        go test -v ./...
